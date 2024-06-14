@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Банковское Приложение</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div id="loginSection">
+            <h2>Вход</h2>
+            <input type="text" id="loginUsername" placeholder="Имя пользователя">
+            <input type="password" id="loginPassword" placeholder="Пароль">
+            <button onclick="login()">Войти</button>
+        </div>
+
+        <div id="userSection" style="display: none;">
+            <h2>Баланс</h2>
+            <button onclick="checkBalance()">Проверить баланс</button>
+            <p id="balance"></p>
+
+            <h2>Перевод средств</h2>
+            <input type="text" id="recipient" placeholder="Получатель">
+            <input type="number" id="amount" placeholder="Сумма">
+            <button onclick="transfer()">Перевести</button>
+        </div>
+
+        <div id="adminSection" style="display: none;">
+            <h2>Админ-панель</h2>
+
+            <div id="adminPanel">
+                <h3>Пользователи и транзакции</h3>
+                <pre id="adminData"></pre>
+
+                <h3>Регистрация пользователя</h3>
+                <input type="text" id="newUsername" placeholder="Имя пользователя">
+                <input type="password" id="newPassword" placeholder="Пароль">
+                <input type="number" id="newBalance" placeholder="Начальный баланс">
+                <button onclick="adminRegisterUser()">Зарегистрировать</button>
+
+                <h3>Назначить баланс</h3>
+                <input type="text" id="setBalanceUsername" placeholder="Имя пользователя">
+                <input type="number" id="setBalanceAmount" placeholder="Новый баланс">
+                <button onclick="adminSetBalance()">Назначить баланс</button>
+            </div>
+        </div>
+
+        <div id="promoCodeSection">
+            <h2>Введите промокод</h2>
+            <input type="text" id="promoCode" placeholder="Промокод">
+            <button onclick="adminLogin()">Ввести</button>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
